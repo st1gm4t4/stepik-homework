@@ -13,9 +13,6 @@ try:
     browser.get("http://suninjuly.github.io/explicit_wait2.html")
     price = "$100"
     button = browser.find_element_by_id("book")
-    # говорим Selenium проверять в течение 5 секунд, пока кнопка не станет кликабельной
-
-
     WebDriverWait(browser, 15).until(
             EC.text_to_be_present_in_element((By.ID, "price"), price)
         )
@@ -33,3 +30,4 @@ finally:
     # ожидание чтобы визуально оценить результаты прохождения скрипта
     time.sleep(10)
     # закрываем браузер после всех манипуляций
+    browser.quit()
